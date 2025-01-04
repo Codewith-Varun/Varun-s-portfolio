@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varun Dev's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #F3E8FF;
+      /* Soft Lavender */
+      color: #2C2C54;
+      /* Deep Lavender Text */
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #C3AED6;
+      /* Light Lavender */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #2C2C54;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #2C2C54;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #917FB3;
+      /* Medium Lavender */
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 2rem 2rem;
+      text-align: center;
+      background: linear-gradient(to bottom, #F3E8FF, #E4D1FF);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #2C2C54;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    .buttons {
+      margin-top: 1rem;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: #F3E8FF;
+      background: #917FB3;
+      /* Medium Lavender */
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      margin: 0 0.5rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: #C3AED6;
+      /* Light Lavender */
+    }
+
+    .hero img {
+      max-width: 40%;
+      margin-top: 1rem;
+      border-radius: 10px;
+      border: 3px solid #917FB3;
+      /* Lavender Border */
+    }
+
+    /* Skills Section */
+    .skills {
+      padding: 2rem 2rem;
+      background: #E4D1FF;
+      /* Muted Lavender */
+      color: #2C2C54;
+      text-align: center;
+    }
+
+    .skills h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #917FB3;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .skill-box {
+      background: #C3AED6;
+      /* Light Lavender */
+      color: #2C2C54;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 150px;
+    }
+
+    .skill-box i {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .skill-box:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Work Section */
+    .work {
+      padding: 2rem 2rem;
+      text-align: center;
+      background: #F3E8FF;
+    }
+
+    .work h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #917FB3;
+    }
+
+    .work-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .work-card {
+      background: #C3AED6;
+      /* Light Lavender */
+      color: #2C2C54;
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .work-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .work-img {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .work-img img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid #2C2C54;
+      margin: 0 1rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 1rem;
+      background: #917FB3;
+      /* Medium Lavender */
+      text-align: center;
+      color: #F3E8FF;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        padding-left: 0;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .work-cards {
+        flex-direction: column;
+      }
+
+      .skill-box {
+        width: 120px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Varun Dev's Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Hi, I'm Varun Dev</h1>
+    <p>A passionate Web Developer skilled in Python, MERN stack, and machine learning, dedicated to building modern, efficient web applications.</p>
+    <div class="buttons">
+      <a href="https://www.linkedin.com/in/varun-dev-96a5602a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn" aria-label="LinkedIn Profile">LinkedIn</a>
+      <a href="#" class="btn" aria-label="Download CV">Download CV</a>
+    </div>
+    <img src="it-job-concept-illustration_114360-27000.avif" alt="Varun Dev's Web Development Illustration"
+      height="300px" width="300px">
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill-box"><i class="fab fa-html5"></i>HTML</div>
+      <div class="skill-box"><i class="fab fa-css3-alt"></i>CSS</div>
+      <div class="skill-box"><i class="fab fa-js"></i>JavaScript</div>
+      <div class="skill-box"><i class="fab fa-react"></i>React</div>
+      <div class="skill-box"><i class="fab fa-node-js"></i>Node.js</div>
+      <div class="skill-box"><i class="fas fa-database"></i>MongoDB</div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section class="work" id="work">
+    <h2>Work Experience</h2>
+
+    <!-- Work Image Section -->
+    <div class="work-img">
+      <img src="download (4).png" alt="Backend Development" />
+      <img src="download (5).jpg" alt="Frontend Development" />
+      <img src="download (3).png" alt="Backend Development" />
+    </div>
+
+    <div class="work-cards">
+      <div class="work-card">
+        <h3>Best Performance Award | Softpro India</h3>
+        <p>Received the Best Performance Award in the year 2023 as a Python Developer for outstanding contribution in developing projects
+          using Python and Tkinter, achieving A++ marks for exceptional coding skills and dedication.</p>
+      </div>
+      <div class="work-card">
+        <h3>Campus Ambassador | CodeHub Nexus</h3>
+        <p>Currently Promoted CodeHub Nexus on campus by organizing tech events, workshops, and hackathons. Facilitated student
+          participation in coding initiatives and served as a liaison between the brand and the college, increasing
+          engagement and awareness of programming resources.</p>
+      </div>
+      <div class="work-card">
+        <h3>Internshala Student Partner | Internshala</h3>
+        <p>Nowadays Represented Internshala on campus by promoting internships, online training programs, and career
+          opportunities. Organized campaigns, increased student engagement, and helped peers discover valuable
+          skill-building resources and job opportunities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <h2>Contact Me</h2>
+    <p style="margin:12px;">If you'd like to collaborate, reach out via LinkedIn or email!</p>
+    <a href="https://www.linkedin.com/in/varun-dev-96a5602a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn" aria-label="LinkedIn Profile">LinkedIn</a>
+    <a href="#" class="btn" aria-label="Download CV">Email</a>
+    <p style="margin:12px;">Thank you for visiting my portfolio!</p>
+  </footer>
+</body>
+
+</html>
